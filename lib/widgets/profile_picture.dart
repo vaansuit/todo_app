@@ -20,17 +20,18 @@ class ProfilePicture extends StatelessWidget {
             height: 100,
             width: 300,
             decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: const DecorationImage(
-                  image: AssetImage('assets/img/profile.jpg'),
-                  fit: BoxFit.cover,
+              shape: BoxShape.circle,
+              image: const DecorationImage(
+                image: AssetImage('assets/img/profile.jpg'),
+                fit: BoxFit.cover,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.shadowColors,
+                  spreadRadius: 3.5,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.shadowColors,
-                    spreadRadius: 3.5,
-                  ),
-                ]),
+              ],
+            ),
           ),
         ],
       ),
