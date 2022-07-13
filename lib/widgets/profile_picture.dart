@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/colors.dart';
+
 class ProfilePicture extends StatelessWidget {
   const ProfilePicture({
     Key? key,
@@ -17,13 +19,18 @@ class ProfilePicture extends StatelessWidget {
           Container(
             height: 100,
             width: 300,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('assets/img/profile.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: const DecorationImage(
+                  image: AssetImage('assets/img/profile.jpg'),
+                  fit: BoxFit.cover,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.shadowColors,
+                    spreadRadius: 3.5,
+                  ),
+                ]),
           ),
         ],
       ),

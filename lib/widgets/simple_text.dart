@@ -4,12 +4,14 @@ class SimpleText extends StatelessWidget {
   Color? color;
   final String text;
   double size;
+  double height;
   TextOverflow overFlow;
 
   SimpleText({
     Key? key,
     this.color = Colors.white,
     this.size = 20,
+    this.height = 1.2,
     this.overFlow = TextOverflow.ellipsis,
     required this.text,
   }) : super(key: key);
