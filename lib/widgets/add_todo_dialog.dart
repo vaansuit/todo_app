@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/provider/todos_provider.dart';
 
 import '../model/todo.dart';
 import 'todo_form_widget.dart';
@@ -56,6 +58,11 @@ class _AddTodoDialogState extends State<AddTodoDialog> {
         description: description,
         createdTime: DateTime.now(),
       );
+
+      final provider = Provider.of<TodosProvider>(context, listen: false);
+      provider.addTodo(todo);
+
+      Navigator.of(context).pop();
     }
   }
 }
