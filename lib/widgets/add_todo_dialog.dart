@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'simple_text.dart';
+import '../model/todo.dart';
+import 'todo_form_widget.dart';
 
 class AddTodoDialog extends StatefulWidget {
   AddTodoDialog({Key? key}) : super(key: key);
@@ -16,15 +17,45 @@ class _AddTodoDialogState extends State<AddTodoDialog> {
 
   @override
   Widget build(BuildContext context) => AlertDialog(
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SimpleText(
-              text: 'Adicione uma tarefa!',
-              size: 22,
-            ),
-          ],
+        content: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Adicione uma tarefa!',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              TodoFormWidget(
+                onChangedTitle: (title) => setState(() => this.title = title),
+                onChangedDescription: (description) =>
+                    setState(() => this.description = description),
+                onSaveTodo: addTodo,
+              ),
+            ],
+          ),
         ),
       );
+
+  void addTodo() {
+    final isValid = _formKey.currentState!.validate();
+
+    if (!isValid) {
+      return;
+    } else {
+      final todo = Todo(
+        id: DateTime.now().toString(),
+        title: title,
+        description: description,
+        createdTime: DateTime.now(),
+      );
+    }
+  }
 }

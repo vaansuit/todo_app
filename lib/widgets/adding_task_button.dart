@@ -18,8 +18,9 @@ class AddingTaskButton extends StatelessWidget {
           FloatingActionButton(
             onPressed: () => showDialog(
                 context: context,
-                builder: AddTodoDialog(),
-                barrierDismissible: false),
+                builder: (context) {
+                  return AddTodoDialog();
+                }),
             child: Icon(
               Icons.add,
             ),

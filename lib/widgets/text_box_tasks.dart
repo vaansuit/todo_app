@@ -28,13 +28,19 @@ class TextBoxTasks extends StatelessWidget {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  SimpleText(
-                    text: 'Você tem 3 tarefas\npendentes para hoje!',
-                    size: 16,
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 20,
+                  bottom: 5,
+                ),
+                child: Column(
+                  children: [
+                    SimpleText(
+                      text: 'Tarefas',
+                      size: 16,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
