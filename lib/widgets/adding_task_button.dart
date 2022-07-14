@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/utils/colors.dart';
 
+import 'add_todo_dialog.dart';
+
 class AddingTaskButton extends StatelessWidget {
   const AddingTaskButton({
     Key? key,
@@ -13,23 +15,15 @@ class AddingTaskButton extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          InkWell(
-            onTap: (() {}),
-            child: Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.shadowColors,
-                    spreadRadius: 1.5,
-                  ),
-                ],
-              ),
-              child: const Icon(Icons.add),
+          FloatingActionButton(
+            onPressed: () => showDialog(
+                context: context,
+                builder: AddTodoDialog(),
+                barrierDismissible: false),
+            child: Icon(
+              Icons.add,
             ),
+            backgroundColor: Colors.black,
           ),
         ],
       ),
