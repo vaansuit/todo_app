@@ -8,7 +8,6 @@ import '../widgets/profile_picture.dart';
 import '../widgets/text_box_tasks.dart';
 import '../widgets/todo_list_widgets.dart';
 import '../widgets/top_bar.dart';
-import 'task_page_body.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

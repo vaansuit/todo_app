@@ -9,24 +9,24 @@ class TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          InkWell(
-            onTap: (() {}),
-            child: const Icon(
-              Icons.menu,
-              size: 30,
-            ),
-          ),
-          SimpleText(text: 'toDo ^~^'),
-          InkWell(
-            onTap: (() {}),
-            child: const Icon(
-              Icons.search,
-              size: 30,
-            ),
-          ),
+          // InkWell(
+          //   onTap: (() {}),
+          //   child: const Icon(
+          //     Icons.menu,
+          //     size: 30,
+          //   ),
+          // ),
+          Center(child: SimpleText(text: 'toDo ^~^')),
+          // InkWell(
+          //   onTap: (() {}),
+          //   child: const Icon(
+          //     Icons.search,
+          //     size: 30,
+          //   ),
+          // ),
         ],
       ),
     );

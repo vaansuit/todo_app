@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:todo_app/provider/todos_provider.dart';
 
 import '../model/todo.dart';
+import '../provider/todos_provider.dart';
 import 'todo_form_widget.dart';
 
 class AddTodoDialog extends StatefulWidget {
-  AddTodoDialog({Key? key}) : super(key: key);
+  const AddTodoDialog({Key? key}) : super(key: key);
 
   @override
   State<AddTodoDialog> createState() => _AddTodoDialogState();

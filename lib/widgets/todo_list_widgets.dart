@@ -1,11 +1,13 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/provider/todos_provider.dart';
 import 'package:todo_app/widgets/todo_widget.dart';
 
-import '../model/todo.dart';
-
 class TodoListWidgets extends StatefulWidget {
+  const TodoListWidgets({Key? key}) : super(key: key);
+
   @override
   State<TodoListWidgets> createState() => _TodoListWidgetsState();
 }
@@ -17,9 +19,9 @@ class _TodoListWidgetsState extends State<TodoListWidgets> {
     final todos = provider.todos;
 
     return todos.isEmpty
-        ? Center(
+        ? const Center(
             child: Text(
-              'Sem tarefas a serem feitas!',
+              'Parabéns! Você não tem tarefas pendentes (◡‿◡ *)',
             ),
           )
         : ListView.separated(
@@ -32,6 +34,7 @@ class _TodoListWidgetsState extends State<TodoListWidgets> {
               final todo = todos[index];
 
               return TodoWidget(todo: todo);
-            });
+            },
+          );
   }
 }
